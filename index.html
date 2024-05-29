@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QuizGame</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <div class="game">
-     <h1>Simple Quiz</h1>
-     <div class="Quiz">
-        <h2 id="question">Pour la question va ici</h2>
-        <div id="answer-buttons">
-          <button class="btn">réponse 1</button>
-          <button class="btn">réponse 2</button>
-          <button class="btn">réponse 3</button>
-          <button class="btn">réponse 4</button>
-        </div>
-        <button id="next-btn">Suivant</button>
+    <div class="home" id="home">
+        <h1>Bienvenue au QuizGame!</h1>
+        <label for="player-name">Entrez votre nom:</label>
+        <input type="text" id="player-name" name="player-name">
+        <button id="start-btn">Commencer le Quiz</button>
+    </div>
 
-     </div>
-   </div> 
-     
-   </div>
-   <script src="game.js"></script>
+    <div class="game" id="game" style="display: none;">
+        <h1>Simple Quiz</h1>
+        <div class="Quiz">
+            <h2 id="question">Pour la question va ici</h2>
+            <div id="answer-buttons"></div>
+            <button id="next-btn">Suivant</button>
+        </div>
+    </div>
+
+    <div class="result" id="result" style="display: none;">
+        <h1>Quiz Terminé!</h1>
+        <p id="result-message"></p>
+        <button id="restart-same-player-btn">Recommencer</button>
+        <button id="restart-new-player-btn">Retourner à la page d'accueil</button>
+    </div>
+
+    <script src="game.js"></script>
 </body>
 </html>
