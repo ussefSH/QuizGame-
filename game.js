@@ -10,10 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultMessageElement = document.getElementById('result-message');
     const restartSamePlayerButton = document.getElementById('restart-same-player-btn');
     const restartNewPlayerButton = document.getElementById('restart-new-player-btn');
+    const timerElement = document.getElementById('timer'); // Élément du chronomètre
 
     let playerName = '';
     let currentQuestionIndex = 0;
     let score = 0;
+    let timerInterval;
+    let totalTime = 0;
 
     const questions = [
         {
@@ -211,10 +214,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         homeElement.style.display = 'none';
         gameElement.style.display = 'block';
+        document.body.classList.remove('home-active'); // Retirer l'animation de fond
         currentQuestionIndex = 0;
         score = 0;
+        totalTime = 0;
+        startTimer();
         nextButton.innerHTML = 'Suivant';
         showQuestion();
+    }
+
+    function startTimer() {
+        timerElement.innerHTML = 'Temps : 00:00';
+        let startTime = Date.now();
+        timerInterval = setInterval(() => {
+            totalTime = Math.floor((Date.now() - startTime) / 1000);
+            let minutes = Math.floor(totalTime / 60);
+            let seconds = totalTime % 60;
+            timerElement.innerHTML = `Temps : ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }, 1000);
+    }
+
+    function stopTimer() {
+        clearInterval(timerInterval);
     }
 
     function showQuestion() {
@@ -261,10 +282,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function showScore() {
+        stopTimer();
         resetState();
         gameElement.style.display = 'none';
         resultElement.style.display = 'block';
-        resultMessageElement.innerHTML = `${playerName}, vous avez obtenu ${score} sur ${questions.length} !`;
+        let minutes = Math.floor(totalTime / 60);
+        let seconds = totalTime % 60;
+        resultMessageElement.innerHTML = `${playerName}, vous avez obtenu ${score} sur ${questions.length} en ${minutes} minutes et ${seconds} secondes !`;
     }
 
     function handleNextButton() {
@@ -281,12 +305,18 @@ document.addEventListener('DOMContentLoaded', () => {
         gameElement.style.display = 'block';
         currentQuestionIndex = 0;
         score = 0;
+        totalTime = 0;
+        startTimer();
         showQuestion();
     }
 
     function restartNewPlayer() {
         resultElement.style.display = 'none';
         homeElement.style.display = 'block';
+        document.body.classList.add('home-active'); // Ajouter l'animation de fond
         playerNameInput.value = '';
     }
+
+    // Initialiser la page d'accueil avec l'animation
+    document.body.classList.add('home-active');
 });

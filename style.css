@@ -10,6 +10,31 @@ body {
     background-size: cover;
 }
 
+
+
+@keyframes backgroundAnimation {
+    0% {
+        background: url('images/image_monument.webp') no-repeat center center fixed;
+        background-size: cover;
+    }
+    33% {
+        background: url('images/image_1.jpg') no-repeat center center fixed;
+        background-size: cover;
+    }
+    66% {
+        background: url('images/image_2.webp') no-repeat center center fixed;
+        background-size: cover;
+    }
+    100% {
+        background: url('images/image_monument.webp') no-repeat center center fixed;
+        background-size: cover;
+    }
+}
+
+.home-active {
+    animation: backgroundAnimation 14s infinite;
+}
+
 .home, .game, .result {
     background: rgba(255, 255, 255, 0.7);
     width: 90%;
@@ -62,6 +87,12 @@ body {
     color: #001e4d;
     font-weight: 600;
 }
+#timer {
+    font-size: 18px;
+    color: #001e4d;
+    font-weight: 600;
+    margin-top: 20px;
+}
 
 .btn {
     background: #fff;
@@ -98,7 +129,6 @@ body {
     cursor: pointer;
     display: none;
 }
-
 .correct {
     background: #9aeabc;
 }
