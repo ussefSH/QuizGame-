@@ -43,7 +43,19 @@ body {
     border-radius: 10px;
     padding: 30px;
     text-align: center;
+    position: relative; /* Ajout de la propriété position relative */
 }
+
+#timer {
+    font-size: 18px;
+    color: #001e4d;
+    font-weight: 600;
+    position: absolute; /* Positionnement absolu */
+    top: 10px; /* Placement en haut */
+    left: 10px; /* Placement à gauche */
+    margin: 0; /* Réinitialisation des marges */
+}
+
 
 .home h1, .result h1 {
     font-size: 25px;
@@ -86,12 +98,6 @@ body {
     font-size: 18px;
     color: #001e4d;
     font-weight: 600;
-}
-#timer {
-    font-size: 18px;
-    color: #001e4d;
-    font-weight: 600;
-    margin-top: 20px;
 }
 
 .btn {
