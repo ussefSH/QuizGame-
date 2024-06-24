@@ -6,7 +6,7 @@
 }
 
 body {
-    background: url('images/image_monument.webp') no-repeat center center fixed;
+    background: url('https://seniorgold.fr/wp-content/uploads/2024/06/image_monument.webp') no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -14,25 +14,25 @@ body {
 
 @keyframes backgroundAnimation {
     0% {
-        background: url('images/image_monument.webp') no-repeat center center fixed;
+        background: url('https://seniorgold.fr/wp-content/uploads/2024/06/image_monument.webp') no-repeat center center fixed;
         background-size: cover;
     }
     33% {
-        background: url('images/image_1.jpg') no-repeat center center fixed;
+        background: url('https://seniorgold.fr/wp-content/uploads/2024/06/image_1.jpg') no-repeat center center fixed;
         background-size: cover;
     }
     66% {
-        background: url('images/image_2.webp') no-repeat center center fixed;
+        background: url('https://seniorgold.fr/wp-content/uploads/2024/06/image_2.webp') no-repeat center center fixed;
         background-size: cover;
     }
     100% {
-        background: url('images/image_monument.webp') no-repeat center center fixed;
+        background: url('https://seniorgold.fr/wp-content/uploads/2024/06/image_monument.webp') no-repeat center center fixed;
         background-size: cover;
     }
 }
 
 .home-active {
-    animation: backgroundAnimation 14s infinite;
+    animation: backgroundAnimation 20s infinite;
 }
 
 .home, .game, .result {

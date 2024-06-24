@@ -288,7 +288,10 @@ document.addEventListener('DOMContentLoaded', () => {
         resultElement.style.display = 'block';
         let minutes = Math.floor(totalTime / 60);
         let seconds = totalTime % 60;
-        resultMessageElement.innerHTML = `${playerName}, vous avez obtenu ${score} sur ${questions.length} en ${minutes} minutes et ${seconds} secondes !`;
+        resultMessageElement.innerHTML = `Félicitations ${playerName}<br> Vous avez obtenu ${score} sur ${questions.length}.<br>
+        Vous avez terminé le quiz en ${minutes} minutes et ${seconds} secondes !`;
+
+
     }
 
     function handleNextButton() {
