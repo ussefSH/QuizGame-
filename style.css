@@ -153,11 +153,11 @@ body {
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background-color: #111111;
+    background-color: #0f0f0f;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgb(17, 17, 17);
+    color: white;
     font-weight: bold;
 }
 
