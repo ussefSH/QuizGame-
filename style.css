@@ -143,3 +143,29 @@ body {
     background: #ff9393;
 }
 
+#timeline {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.timeline-item {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+.timeline-item.correct {
+    background-color: #9aeabc;
+}
+
+.timeline-item.incorrect {
+    background-color: #ff9393;
+}
+

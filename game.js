@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultMessageElement = document.getElementById('result-message');
     const restartSamePlayerButton = document.getElementById('restart-same-player-btn');
     const restartNewPlayerButton = document.getElementById('restart-new-player-btn');
-    const timerElement = document.getElementById('timer'); // Élément du chronomètre
+    const timerElement = document.getElementById('timer');
+    const timelineElement = document.getElementById('timeline'); // Élément de la timeline
 
     let playerName = '';
     let currentQuestionIndex = 0;
@@ -214,13 +215,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         homeElement.style.display = 'none';
         gameElement.style.display = 'block';
-        document.body.classList.remove('home-active'); // Retirer l'animation de fond
+        document.body.classList.remove('home-active');
         currentQuestionIndex = 0;
         score = 0;
         totalTime = 0;
         startTimer();
         nextButton.innerHTML = 'Suivant';
         showQuestion();
+        initializeTimeline(); // Initialiser la timeline
     }
 
     function startTimer() {
@@ -279,6 +281,7 @@ document.addEventListener('DOMContentLoaded', () => {
             button.disabled = true;
         });
         nextButton.style.display = 'block';
+        updateTimeline(isCorrect); // Mettre à jour la timeline
     }
 
     function showScore() {
@@ -290,8 +293,6 @@ document.addEventListener('DOMContentLoaded', () => {
         let seconds = totalTime % 60;
         resultMessageElement.innerHTML = `Félicitations ${playerName}<br> Vous avez obtenu ${score} sur ${questions.length}.<br>
         Vous avez terminé le quiz en ${minutes} minutes et ${seconds} secondes !`;
-
-
     }
 
     function handleNextButton() {
@@ -311,15 +312,35 @@ document.addEventListener('DOMContentLoaded', () => {
         totalTime = 0;
         startTimer();
         showQuestion();
+        initializeTimeline(); // Réinitialiser la timeline
     }
 
     function restartNewPlayer() {
         resultElement.style.display = 'none';
         homeElement.style.display = 'block';
-        document.body.classList.add('home-active'); // Ajouter l'animation de fond
+        document.body.classList.add('home-active');
         playerNameInput.value = '';
     }
 
-    // Initialiser la page d'accueil avec l'animation
+    function initializeTimeline() {
+        timelineElement.innerHTML = '';
+        for (let i = 1; i <= questions.length; i++) {
+            const timelineItem = document.createElement('div');
+            timelineItem.classList.add('timeline-item');
+            timelineItem.innerHTML = i;
+            timelineElement.appendChild(timelineItem);
+        }
+    }
+
+    function updateTimeline(isCorrect) {
+        const timelineItems = timelineElement.children;
+        const currentTimelineItem = timelineItems[currentQuestionIndex];
+        if (isCorrect) {
+            currentTimelineItem.classList.add('correct');
+        } else {
+            currentTimelineItem.classList.add('incorrect');
+        }
+    }
+
     document.body.classList.add('home-active');
 });
