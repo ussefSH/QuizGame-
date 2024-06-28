@@ -51,10 +51,11 @@ body {
     color: #001e4d;
     font-weight: 600;
     position: absolute; /* Positionnement absolu */
-    top: 10px; /* Placement en haut */
+    bottom: 10px; /* Placement en bas */
     left: 10px; /* Placement à gauche */
     margin: 0; /* Réinitialisation des marges */
 }
+
 
 
 .home h1, .result h1 {
