@@ -1,3 +1,23 @@
+.timer-timeline-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Répartit l'espace entre les éléments */
+    margin-top: 20px; /* Ajoutez de l'espace au-dessus du conteneur, si nécessaire */
+}
+
+#timer {
+    font-size: 18px;
+    color: #001e4d;
+    font-weight: 600;
+    margin-right: 20px; /* Ajoutez de l'espace à droite du chronomètre */
+}
+
+#timeline {
+    display: flex;
+    gap: 10px; /* Ajoute de l'espace entre les éléments de la timeline */
+}
+
+/* Autres styles existants */
 * {
     margin: 0;
     padding: 0;
@@ -9,8 +29,6 @@ body {
     background: url('https://seniorgold.fr/wp-content/uploads/2024/06/image_monument.webp') no-repeat center center fixed;
     background-size: cover;
 }
-
-
 
 @keyframes backgroundAnimation {
     0% {
@@ -45,18 +63,6 @@ body {
     text-align: center;
     position: relative; /* Ajout de la propriété position relative */
 }
-
-#timer {
-    font-size: 18px;
-    color: #001e4d;
-    font-weight: 600;
-    position: absolute; /* Positionnement absolu */
-    bottom: 10px; /* Placement en bas */
-    left: 10px; /* Placement à gauche */
-    margin: 0; /* Réinitialisation des marges */
-}
-
-
 
 .home h1, .result h1 {
     font-size: 25px;
@@ -144,12 +150,6 @@ body {
     background: #ff9393;
 }
 
-#timeline {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
 .timeline-item {
     width: 25px;
     height: 25px;
@@ -169,4 +169,3 @@ body {
 .timeline-item.incorrect {
     background-color: #ff9393;
 }
-
