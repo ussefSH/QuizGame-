@@ -7,31 +7,34 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="home" id="home">
-        <h1>Bienvenue au QuizGame!</h1>
-        <label for="player-name">Entrez votre nom:</label>
-        <input type="text" id="player-name" name="player-name">
-        <button id="start-btn">Commencer le Quiz</button>
-    </div>
-
-    <div class="game" id="game" style="display: none;">
-        <div id="timer">Temps : 00:00</div>
-        <h1>Simple Quiz</h1>
-        <div class="Quiz">
-            <h2 id="question">Pour la question va ici</h2>
-            <div id="answer-buttons"></div>
-            <button id="next-btn">Suivant</button>
+    <div class="container">
+        <div class="home" id="home">
+            <h1>Bienvenue au QuizGame!</h1>
+            <label for="player-name">Entrez votre nom:</label>
+            <input type="text" id="player-name" name="player-name">
+            <button id="start-btn">Commencer le Quiz</button>
         </div>
-        <div id="timeline"></div> 
-    </div>
-    
-    </div>
 
-    <div class="result" id="result" style="display: none;">
-        <h1>Quiz Terminé!</h1>
-        <p id="result-message"></p>
-        <button id="restart-same-player-btn">Recommencer</button>
-        <button id="restart-new-player-btn">Retourner à la page d'accueil</button>
+        <div class="game" id="game" style="display: none;">
+            <div id="timer">Temps : 00:00</div>
+            <h1>Simple Quiz</h1>
+            <div class="Quiz">
+                <h2 id="question">La question va ici</h2>
+                <div id="answer-buttons"></div>
+                <button id="next-btn">Suivant</button>
+            </div>
+            <div id="timeline"></div>
+        </div>
+
+        <div class="result" id="result" style="display: none;">
+            <h1>Quiz Terminé!</h1>
+            <p id="result-message"></p>
+            <div class="game-options">
+                <h2>Options du jeu</h2>
+                <button id="restart-same-player-btn">Recommencer</button>
+                <button id="restart-new-player-btn">Retourner à la page d'accueil</button>
+            </div>
+        </div>
     </div>
 
     <script src="game.js"></script>

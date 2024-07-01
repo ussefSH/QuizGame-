@@ -1,3 +1,4 @@
+/* Styles généraux */
 * {
     margin: 0;
     padding: 0;
@@ -8,6 +9,11 @@
 body {
     background: url('https://seniorgold.fr/wp-content/uploads/2024/06/image_monument.webp') no-repeat center center fixed;
     background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
 }
 
 @keyframes backgroundAnimation {
@@ -33,25 +39,34 @@ body {
     animation: backgroundAnimation 20s infinite;
 }
 
+.container {
+    background: rgba(255, 255, 255, 0.8);
+    width: 90%;
+    max-width: 800px;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
 .home, .game, .result {
     background: rgba(255, 255, 255, 0.7);
-    width: 90%;
-    max-width: 600px;
-    margin: 100px auto 0;
+    width: 100%;
+    margin: 20px auto 0;
     border-radius: 10px;
     padding: 30px;
     text-align: center;
-    position: relative; /* Ajout de la propriété position relative */
-    display: flex; /* Ajout pour alignement du contenu */
-    flex-direction: column; /* Aligne les enfants en colonne */
-    align-items: center; /* Centre les enfants horizontalement */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #timer {
-    font-size: 18px;
+    font-size: 22px;
     color: #001e4d;
     font-weight: 600;
-    margin-bottom: 20px; /* Ajout de marge en bas pour espacement */
+    margin-bottom: 20px;
 }
 
 .home h1, .result h1 {
@@ -144,8 +159,8 @@ body {
 #timeline {
     display: flex;
     justify-content: space-between;
-    width: 100%; /* Assurez-vous que le timeline utilise toute la largeur du parent */
-    padding: 10px 0; /* Ajout de padding pour espacement */
+    width: 100%;
+    padding: 10px 0;
 }
 
 .timeline-item {
@@ -166,4 +181,18 @@ body {
 
 .timeline-item.incorrect {
     background-color: #ff9393;
+}
+
+.game-options {
+    background: rgba(0, 30, 77, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.game-options h2 {
+    font-size: 20px;
+    color: #001e4d;
+    font-weight: 600;
+    margin-bottom: 20px;
 }
