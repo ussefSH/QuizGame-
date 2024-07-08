@@ -8,10 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const answerButtonsElement = document.getElementById('answer-buttons');
     const nextButton = document.getElementById('next-btn');
     const resultMessageElement = document.getElementById('result-message');
-    const restartSamePlayerButton = document.getElementById('restart-same-player-btn');
-    const restartNewPlayerButton = document.getElementById('restart-new-player-btn');
     const timerElement = document.getElementById('timer');
     const timelineElement = document.getElementById('timeline'); // Élément de la timeline
+    const gameOptionsMenu = document.getElementById('game-options-menu'); // Menu déroulant
 
     let playerName = '';
     let currentQuestionIndex = 0;
@@ -204,8 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     startButton.addEventListener('click', startQuiz);
     nextButton.addEventListener('click', handleNextButton);
-    restartSamePlayerButton.addEventListener('click', restartSamePlayer);
-    restartNewPlayerButton.addEventListener('click', restartNewPlayer);
+    gameOptionsMenu.addEventListener('change', handleGameOptions);
 
     function startQuiz() {
         playerName = playerNameInput.value.trim();
@@ -302,6 +300,16 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             showScore();
         }
+    }
+
+    function handleGameOptions() {
+        const selectedOption = gameOptionsMenu.value;
+        if (selectedOption === 'home') {
+            restartNewPlayer();
+        } else if (selectedOption === 'restart') {
+            restartSamePlayer();
+        }
+        gameOptionsMenu.value = ''; // Réinitialiser la sélection
     }
 
     function restartSamePlayer() {
